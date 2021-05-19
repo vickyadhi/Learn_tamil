@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  pie_chart: ^5.0.0
   material_segmented_control: ^3.1.2
   gender_selection: ^0.0.8
   liquid_progress_indicator: ^0.3.2
