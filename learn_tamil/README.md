@@ -11,7 +11,7 @@ A few resources to get you started if this is your first Flutter project:
 
 
 11
-​![1 (1)](https://user-images.githubusercontent.com/75195014/118857411-ddbcc400-b88c-11eb-9735-2c91712d3f38.jpg)
+​
 ![1 (2)](https://user-images.githubusercontent.com/75195014/118857425-e31a0e80-b88c-11eb-8af4-be982b730ed7.jpg)
 12
 ​
