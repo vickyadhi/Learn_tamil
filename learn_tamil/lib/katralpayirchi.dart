@@ -11,7 +11,7 @@ class Vanakammalar2 extends StatefulWidget {
 
 class _Vanakammalar2State extends State<Vanakammalar2> {
   bool value = false;
-  final List=[
+  final list=[
     ListSettings(title: 'கற்றல்பயிற்சி '),
     ListSettings(title: 'தேர்வுபயிற்சி'),
   ];
@@ -52,7 +52,7 @@ class _Vanakammalar2State extends State<Vanakammalar2> {
             child: ListView(
               children: [
                 Padding(padding: EdgeInsets.symmetric(horizontal: 40)),
-                ...List.map(buildSingleCheckbox).toList(),
+                ...list.map(buildSingleCheckbox).toList(),
               ],
             ),
           ),
@@ -93,7 +93,7 @@ class _Vanakammalar2State extends State<Vanakammalar2> {
     );
   }
   Widget buildSingleCheckbox(ListSettings List)=>buildCheckbox(
-      List: List,
+      list: List,
       onClicked: (){
         setState(() {
           final newValue= !List.value;
@@ -102,16 +102,16 @@ class _Vanakammalar2State extends State<Vanakammalar2> {
       }
   );
   Widget buildCheckbox({
-    @required ListSettings List,
+    @required ListSettings list,
     @required VoidCallback onClicked,
   }) => ListTile(
     onTap: onClicked,
     leading: Checkbox(
       activeColor: Colors.white60,
-      value: List.value,
+      value: list.value,
       onChanged: (value)=> onClicked(),
     ),
-    title: Text(List.title),
+    title: Text(list.title),
   );
 }
 
