@@ -43,10 +43,10 @@ class _VanakammalarState extends State<Vanakammalar> {
                 ],
               )),
           child: Center(
-            child: Container(
+            child:Container(
               child: Column(
                 children: [
-
+                  Padding(padding: EdgeInsets.symmetric(horizontal:1,vertical:0)),
                   Padding(
                     padding: const EdgeInsets.only(left: 200,right: 0.0,bottom: 0.0,top:150.0),
                     child: DropdownButton<String>(

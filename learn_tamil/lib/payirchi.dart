@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:learn_tamil/vanakammalar2mf.dart';
 import 'package:material_segmented_control/material_segmented_control.dart';
 import 'package:liquid_progress_indicator/liquid_progress_indicator.dart';
 import 'package:pie_chart/pie_chart.dart';
+import 'package:draw_graph/draw_graph.dart';
+import 'package:draw_graph/models/feature.dart';
 
 enum legendShape { Circle, Rectangle }
 
@@ -16,6 +19,17 @@ class Payirchi extends StatefulWidget {
 class _PayirchiState extends State<Payirchi>
     with SingleTickerProviderStateMixin {
   AnimationController animationController;
+  final List<Feature> features = [
+  Feature(
+  title: "கற்றல்",
+  color: Colors.blue,
+  data: [0.3, 0.6, 0.8, 0.9, 1, 1.2],
+  ),
+  Feature(
+  title: "தேர்வு",
+  color: Colors.black,
+  data: [1, 0.8, 0.6, 0.7, 0.3, 0.1],
+  ),];
   @override
   void initState() {
     // TODO: implement initState
@@ -81,7 +95,7 @@ class _PayirchiState extends State<Payirchi>
           padding: EdgeInsets.fromLTRB(50, 110, 10, 640),
           child: FloatingActionButton.extended(
               elevation: 19,
-              label: const Text(
+              label:  Text(
                 "பயிற்சி",
                 style: TextStyle(color: Colors.black87),
               ),
@@ -93,6 +107,7 @@ class _PayirchiState extends State<Payirchi>
               backgroundColor: Colors.cyan),
         ),
       ),
+
       body: Container(
         decoration: BoxDecoration(
             gradient: LinearGradient(
@@ -299,6 +314,28 @@ class _PayirchiState extends State<Payirchi>
                 padding: const EdgeInsets.fromLTRB(30, 10, 5, 100),
                 child: Text("🎖️  🏆  🌟  ",style: TextStyle(fontSize: 60.9),),
               ),
+              LineGraph(
+                features: features,
+                size: Size(420, 450),
+                labelX: ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6'],
+                labelY: ['25%', '45%', '65%', '75%', '85%', '100%'],
+                showDescription: true,
+                graphColor: Colors.black87,
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(vertical: 5,horizontal: 30),
+                height: 60,
+                width: 200,
+                child: RaisedButton(onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Vanakammalar2mf()));
+                },
+                  elevation: 20,
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+                child: Text("அடுத்தது",style: TextStyle(fontSize: 18)),color: Colors.cyan,textColor: Colors.white,),
+              )
             ],
           ),
         ),
